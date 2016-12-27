@@ -2,7 +2,7 @@ package catalog.service
 
 class Book {
     String title
-    long pages
+    Integer pages
     String isbn
 
     static belongsTo = Author
@@ -10,7 +10,6 @@ class Book {
 
     static constraints = {
         title blank: false
-        pages size: 1..1000, blank: false
         isbn blank: false
     }
 }
