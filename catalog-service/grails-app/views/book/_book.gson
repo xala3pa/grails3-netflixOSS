@@ -1,0 +1,7 @@
+import catalog.service.Book
+
+model {
+	Book book
+}
+
+json g.render(book)
