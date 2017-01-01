@@ -63,3 +63,13 @@ server:
        serviceUrl:
          defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 ```
+
+To run this project use the gradle task bootRun or ./gradlew bootRun. It will start up on port
+8761 and serve the Eureka API from "/eureka".
+
+## Resources
+
+| Path             | Description  |
+|------------------|--------------|
+| /                | Home page (HTML UI) listing service registrations          |
+| /eureka/apps     | Raw registration metadata |
