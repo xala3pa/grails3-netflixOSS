@@ -25,7 +25,7 @@ In our build.gradle we will have the following dependency:
 
 
 
-To Stand up an Eureka Service Registry, we use Spring Cloud’s `@EnableEurekaServer` annotation, This is a regular Spring Boot application with one annotation added to enable the service registry.
+To Stand up an Eureka Service Registry, we use Sping Cloud’s `@EnableEurekaServer` annotation, This is a regular Spring Boot application with one annotation added to enable the service registry.
 
 **EurekaServerApplication.java**
 
@@ -63,5 +63,3 @@ server:
        serviceUrl:
          defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 ```
-
-    
