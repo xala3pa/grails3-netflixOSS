@@ -5,7 +5,7 @@ The idea is to keep the service as simple as possible to focus on the integratio
 
 The service is base on Grails 3 rest-api profile, designed for the creation of pure REST applications without a UI.
 
-
+This the list of the endpoints:
 
 **Books List**
 ----
@@ -196,3 +196,57 @@ The service is base on Grails 3 rest-api profile, designed for the creation of p
   ```
   curl -i -H "Content-Type:application/json" -X PUT localhost:8080/books/3 -d '{"title":"RESTful Web API v2"}'
   ```
+
+  
+---
+Some steps to build our REST service:
+  
+Prerequisites:
+  
+  * JDK 1.7 or greater installed.
+  * Grails 3 or greater.
+  * Gradle
+  
+I'm using the amazing SDKMAN!! more info in [SDKMAN website](http://sdkman.io/).
+  
+To create the application once installed Grails, only executes:
+
+`$ grails create-app catalog-service --profile rest-api`
+
+Then create some Domain objects and a controller extending from the `RestfulController` super class will implement all the necessary operations to perform the common REST verbs such as GET, POST, PUT and DELETE.
+
+Next, to include our application as a Eureka client we need to add a new dependency to our `build.gradle` file: 
+
+`compile "org.springframework.cloud:spring-cloud-starter-eureka:1.2.3.RELEASE"`
+
+Annotate our main class with `@EnableEurekaClient`:
+
+```
+package catalog.service
+   
+   import grails.boot.GrailsApp
+   import grails.boot.config.GrailsAutoConfiguration
+   import org.springframework.cloud.netflix.eureka.EnableEurekaClient
+   
+   @EnableEurekaClient
+   class Application extends GrailsAutoConfiguration {
+       static void main(String[] args) {
+           GrailsApp.run(Application, args)
+       }
+   }
+```
+
+and finally configure the service, adding the following to our `application.yml` file:
+
+```
+eureka:
+     client:
+       registryFetchIntervalSeconds: 5
+       serviceUrl:
+         defaultZone: http://eureka:admin@127.0.0.1:8761/eureka/
+     instance:
+       preferIpAddress: true
+       leaseRenewalIntervalInSeconds: 10
+       metadataMap:
+         instanceId: ${spring.application.name}:${spring.application.instance_id}:${random.int}
+```
