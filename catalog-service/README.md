@@ -217,7 +217,12 @@ Then create some Domain objects and a controller extending from the `RestfulCont
 
 Next, to include our application as a Eureka client we need to add a new dependency to our `build.gradle` file: 
 
-`compile "org.springframework.cloud:spring-cloud-starter-eureka:1.2.3.RELEASE"`
+`compile "org.springframework.cloud:spring-cloud-starter-eureka"`
+
+To solve version mismatch issue, we can add a “bill of materials” (BOM) dependency, to do that we only need to add Spring cloud dependency management:
+ 
+`mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Camden.RELEASE'` 
+
 
 Annotate our main class with `@EnableEurekaClient`:
 
