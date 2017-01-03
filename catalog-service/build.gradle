@@ -27,6 +27,7 @@ repositories {
 dependencyManagement {
     imports {
         mavenBom "org.grails:grails-bom:$grailsVersion"
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Camden.RELEASE'
     }
     applyMavenExclusions false
 }
@@ -37,7 +38,7 @@ dependencies {
     compile "org.grails:grails-core"
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-starter-tomcat"
-    compile "org.springframework.cloud:spring-cloud-starter-eureka:1.2.3.RELEASE"
+    compile "org.springframework.cloud:spring-cloud-starter-eureka"
     compile "org.grails:grails-plugin-url-mappings"
     compile "org.grails:grails-plugin-rest"
     compile "org.grails:grails-plugin-codecs"
