@@ -5,14 +5,3 @@ server:
 spring:
   application:
     name: catalog-service
-
-eureka:
-  client:
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: http://eureka:admin@127.0.0.1:8761/eureka/
-  instance:
-    preferIpAddress: true
-    leaseRenewalIntervalInSeconds: 10
-    metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id}:${random.int}
