@@ -1,0 +1,7 @@
+---
+server:
+  port: 8093
+
+spring:
+  application:
+    name: bookStore-service
