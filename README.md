@@ -11,8 +11,6 @@ The patterns provided include Service Discovery (Eureka), Circuit Breaker (Hystr
 
 **Circuit Breaker**: Hystrix clients can be built with a simple annotation-driven method decorator
 
-**Declarative REST Client**: Feign creates a dynamic implementation of an interface decorated with JAX-RS or Spring MVC annotations.
-
 **External Configuration**: a bridge from the Spring Environment to Archaius (enables native configuration of Netflix components using Spring Boot conventions).
 
 **Router and Filter**: automatic regsitration of Zuul filters, and a simple convention over configuration approach to reverse proxy creation.
