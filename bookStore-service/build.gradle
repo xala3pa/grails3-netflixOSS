@@ -58,6 +58,7 @@ dependencies {
     compile "org.grails.plugins:views-json"
     compile "org.grails.plugins:views-json-templates"
     compile "org.grails:grails-datastore-rest-client"
+    compile "org.springframework.cloud:spring-cloud-starter-hystrix"
     console "org.grails:grails-console"
     profile "org.grails.profiles:rest-api"
     runtime "com.h2database:h2"

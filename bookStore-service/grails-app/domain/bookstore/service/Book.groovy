@@ -4,7 +4,6 @@ class Book {
     String title
     Integer pages
     String isbn
-    String Author
 
     static constraints = {
         title blank: false
