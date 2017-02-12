@@ -11,7 +11,7 @@ class BookService {
     @HystrixCommand(fallbackMethod = "getStaticList")
     def bookList() {
         RestBuilder restBuilder = new RestBuilder()
-        def restRep = restBuilder.get("http://localhost:8091/books") {
+        def restRep = restBuilder.get("http://localhost:8084/catalog-service/books") {
             accept JSON
         }
 
