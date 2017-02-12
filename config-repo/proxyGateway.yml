@@ -9,9 +9,9 @@ eureka:
 
 zuul:
   routes:
-    catalog-service: 
-	  path: /catalog-service/**
-	  serviceId: catalog-service
-    bookStore-service: 
-	  path: /bookStore-service/**
-	  serviceId: bookStore-service
+    catalog-service:
+        path: /catalog-service/**
+        serviceId: catalog-service
+    bookStore-service:
+      path: /bookStore-service/**
+      serviceId: bookStore-service
