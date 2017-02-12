@@ -1,2 +1,17 @@
 server:
   port: 8084
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+
+zuul:
+  routes:
+    catalog-service: 
+	path: /catalog-service/**
+	serviceId: catalog-service
+    bookStore-service: 
+	path: /bookStore-service/**
+	serviceId: bookStore-service
